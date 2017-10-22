@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="701.0" prefWidth="1018.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.com.controllers.GraphicCompareParJourController">
+   <children>
+      <AnchorPane layoutY="-1.0" prefHeight="702.0" prefWidth="281.0" style="-fx-background-color: #0C2757;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-1.0">
+         <children>
+            <Separator layoutX="18.0" layoutY="71.0" prefHeight="3.0" prefWidth="247.0" AnchorPane.bottomAnchor="628.0" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="71.0" />
+            <Label fx:id="anneLabel" layoutX="24.0" layoutY="30.0" prefHeight="41.0" prefWidth="217.0" text="Station" textFill="#fffdfd" AnchorPane.bottomAnchor="631.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="30.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="comboStations" layoutX="41.0" layoutY="112.0" prefHeight="41.0" prefWidth="199.0" promptText="ABBEVILLE" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="112.0" />
+            <Label layoutX="41.0" layoutY="89.0" text="Station :" textFill="#fcfcfc" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="89.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="41.0" layoutY="166.0" text="Date1 : " textFill="WHITE" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="166.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="datePicker1" editable="false" layoutX="41.0" layoutY="194.0" prefHeight="41.0" prefWidth="199.0" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="194.0" />
+            <Button layoutX="77.0" layoutY="341.0" mnemonicParsing="false" onAction="#visualiserAction" prefHeight="41.0" prefWidth="128.0" text="Visualiser" AnchorPane.leftAnchor="77.0" AnchorPane.topAnchor="341.0" />
+            <Label layoutX="56.0" layoutY="504.0" prefHeight="20.0" prefWidth="143.0" text="Tempétature : " textFill="WHITE" AnchorPane.leftAnchor="56.0" AnchorPane.topAnchor="504.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="radioKelvin" layoutX="56.0" layoutY="536.0" mnemonicParsing="false" onAction="#setToKelvin" selected="true" text="Kelvin" textFill="WHITE" AnchorPane.leftAnchor="56.0" AnchorPane.topAnchor="536.0">
+               <toggleGroup>
+                  <ToggleGroup fx:id="groupeR" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="radioCelsius" layoutX="142.0" layoutY="536.0" mnemonicParsing="false" onAction="#setToCelcius" prefHeight="18.0" prefWidth="94.0" text="Celsius" textFill="WHITE" toggleGroup="$groupeR" AnchorPane.leftAnchor="142.0" AnchorPane.topAnchor="536.0" />
+            <Separator layoutX="18.0" layoutY="480.0" prefHeight="3.0" prefWidth="247.0" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="480.0" />
+            <ProgressBar fx:id="progBarre" layoutX="20.0" layoutY="415.0" prefHeight="20.0" prefWidth="199.0" progress="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="415.0" />
+            <ProgressIndicator fx:id="progIndicator" layoutX="219.0" layoutY="418.0" prefHeight="35.0" prefWidth="38.0" progress="0.0" AnchorPane.leftAnchor="219.0" AnchorPane.topAnchor="418.0" />
+            <Label fx:id="progLabel" layoutX="24.0" layoutY="446.0" prefHeight="15.0" prefWidth="151.0" text="progressing" textFill="WHITE" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="446.0" />
+            <Label layoutX="41.0" layoutY="244.0" text="Date2 : " textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="datePicker2" editable="false" layoutX="41.0" layoutY="272.0" prefHeight="41.0" prefWidth="199.0" />
+         </children>
+      </AnchorPane>
+      <LineChart fx:id="lineChart" layoutX="281.0" layoutY="2.0" prefHeight="529.0" prefWidth="736.0" title="COURBE DES DONNÉES MÉTÉO" AnchorPane.leftAnchor="281.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="2.0">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis side="LEFT" />
+         </yAxis>
+      </LineChart>
+      <RadioButton fx:id="btnNeb" layoutX="755.0" layoutY="531.0" mnemonicParsing="false" onAction="#displayNebulosite" text="Nébulosité">
+         <toggleGroup>
+            <ToggleGroup fx:id="radioGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="btnTemp" layoutX="502.0" layoutY="531.0" mnemonicParsing="false" onAction="#displayTemperature" selected="true" text="Température" toggleGroup="$radioGroup" />
+      <RadioButton fx:id="btnHum" layoutX="633.0" layoutY="531.0" mnemonicParsing="false" onAction="#displayHumidite" text="Humidité" toggleGroup="$radioGroup" />
+      <Label layoutX="23.0" layoutY="12.0" text="Comparer données entre deux jours" textFill="WHITE" AnchorPane.leftAnchor="23.0" AnchorPane.topAnchor="12.0" />
+   </children>
+</AnchorPane>

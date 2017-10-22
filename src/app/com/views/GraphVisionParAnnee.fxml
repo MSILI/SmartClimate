@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="701.0" prefWidth="1018.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.com.controllers.GraphicVisionParAnneeController">
+   <children>
+      <AnchorPane layoutY="-1.0" prefHeight="702.0" prefWidth="281.0" style="-fx-background-color: #0C2757;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-1.0">
+         <children>
+            <Separator layoutX="18.0" layoutY="71.0" prefHeight="3.0" prefWidth="247.0" AnchorPane.bottomAnchor="628.0" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="71.0" />
+            <Label fx:id="anneLabel" layoutX="24.0" layoutY="30.0" prefHeight="41.0" prefWidth="217.0" text="Station" textFill="#fffdfd" AnchorPane.bottomAnchor="631.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="30.0">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="comboStations" layoutX="41.0" layoutY="164.0" prefHeight="41.0" prefWidth="199.0" promptText="ABBEVILLE" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="164.0" />
+            <Label layoutX="41.0" layoutY="141.0" text="Station :" textFill="#fcfcfc" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="141.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="41.0" layoutY="217.0" text="Annee : " textFill="WHITE" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="217.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Button layoutX="77.0" layoutY="323.0" mnemonicParsing="false" onAction="#visualiser" prefHeight="41.0" prefWidth="128.0" text="Visualiser" AnchorPane.leftAnchor="77.0" AnchorPane.topAnchor="323.0" />
+            <Label layoutX="56.0" layoutY="486.0" prefHeight="20.0" prefWidth="143.0" text="Tempétature : " textFill="WHITE" AnchorPane.bottomAnchor="196.0" AnchorPane.leftAnchor="56.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="radioKelvin" layoutX="56.0" layoutY="518.0" mnemonicParsing="false" onAction="#setToKelvin" selected="true" text="Kelvin" textFill="WHITE" AnchorPane.bottomAnchor="166.0" AnchorPane.leftAnchor="56.0">
+               <toggleGroup>
+                  <ToggleGroup fx:id="groupeR" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="radioCelsius" layoutX="142.0" layoutY="518.0" mnemonicParsing="false" onAction="#setToCelcius" prefHeight="18.0" prefWidth="94.0" text="Celsius" textFill="WHITE" toggleGroup="$groupeR" AnchorPane.bottomAnchor="166.0" AnchorPane.leftAnchor="142.0" />
+            <Separator layoutX="18.0" layoutY="462.0" prefHeight="3.0" prefWidth="247.0" AnchorPane.bottomAnchor="237.0" AnchorPane.leftAnchor="18.0" />
+            <ProgressBar fx:id="progBarre" layoutX="20.0" layoutY="397.0" prefHeight="20.0" prefWidth="199.0" progress="0.0" AnchorPane.bottomAnchor="285.0" AnchorPane.leftAnchor="20.0" />
+            <ProgressIndicator fx:id="progIndicator" layoutX="223.0" layoutY="400.0" prefHeight="35.0" prefWidth="38.0" progress="0.0" AnchorPane.bottomAnchor="267.0" AnchorPane.leftAnchor="223.0" />
+            <Label fx:id="progLabel" layoutX="24.0" layoutY="428.0" prefHeight="15.0" prefWidth="151.0" text="progressing" textFill="WHITE" AnchorPane.bottomAnchor="259.0" AnchorPane.leftAnchor="24.0" />
+            <ComboBox fx:id="comboAnnee" layoutX="42.0" layoutY="241.0" prefHeight="41.0" prefWidth="199.0" promptText="1996" AnchorPane.leftAnchor="42.0" AnchorPane.topAnchor="241.0" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="42.0" layoutY="13.0" text="Visualiser graphe par année" textFill="WHITE" AnchorPane.leftAnchor="42.0" AnchorPane.topAnchor="13.0" />
+      <LineChart fx:id="lineChart" layoutX="279.0" layoutY="2.0" prefHeight="529.0" prefWidth="736.0" title="COURBE DES DONNÉES MÉTÉO" AnchorPane.leftAnchor="279.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="2.0">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis side="LEFT" />
+         </yAxis>
+      </LineChart>
+      <RadioButton fx:id="btnNeb" layoutX="753.0" layoutY="531.0" mnemonicParsing="false" onAction="#displayNebulosite" text="Nébulosité">
+         <toggleGroup>
+            <ToggleGroup fx:id="radioGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="btnTemp" layoutX="500.0" layoutY="531.0" mnemonicParsing="false" onAction="#displayTemperature" selected="true" text="Température" toggleGroup="$radioGroup" />
+      <RadioButton fx:id="btnHum" layoutX="631.0" layoutY="531.0" mnemonicParsing="false" onAction="#displayHumidite" text="Humidité" toggleGroup="$radioGroup" />
+   </children>
+</AnchorPane>

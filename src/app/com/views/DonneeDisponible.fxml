@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="673.0" prefWidth="1124.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.com.controllers.DonneeDisponibleController">
+   <children>
+      <AnchorPane layoutY="-1.0" prefHeight="702.0" prefWidth="281.0" style="-fx-background-color: #0C2757;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-1.0">
+         <children>
+            <Separator layoutX="18.0" layoutY="71.0" prefHeight="3.0" prefWidth="247.0" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="71.0" />
+            <Separator layoutX="19.0" layoutY="516.0" prefHeight="3.0" prefWidth="247.0" AnchorPane.leftAnchor="19.0" AnchorPane.topAnchor="516.0" />
+            <Label layoutX="16.0" layoutY="38.0" text="Liste des données disponibles" textFill="WHITE" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="38.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <ListView fx:id="listViewAnnee" layoutX="35.0" layoutY="137.0" prefHeight="341.0" prefWidth="200.0" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="137.0" />
+            <Label layoutX="35.0" layoutY="101.0" text="Liste des années disponibles : " textFill="WHITE" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="101.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="errorLabel" layoutX="35.0" layoutY="120.0" text="noYearDispoLabel" textFill="WHITE" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="120.0" />
+            <Label layoutX="35.0" layoutY="540.0" text="Veuillez choisir une année pour  voir&#10; la liste des mois disponibles" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <Label fx:id="titreMoisdispo" layoutX="321.0" layoutY="36.0" text="Liste des mois disponibles" AnchorPane.leftAnchor="321.0" AnchorPane.topAnchor="36.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Separator fx:id="sepMoisDispo" layoutX="321.0" layoutY="70.0" prefHeight="3.0" prefWidth="267.0" AnchorPane.leftAnchor="321.0" AnchorPane.topAnchor="70.0" />
+      <ListView fx:id="listViewMois" layoutX="325.0" layoutY="91.0" prefHeight="435.0" prefWidth="247.0" AnchorPane.leftAnchor="325.0" AnchorPane.topAnchor="91.0" />
+      <Label fx:id="erreurMoisLabel" layoutX="325.0" layoutY="74.0" prefHeight="17.0" prefWidth="251.0" text="erreurMoisLabel" AnchorPane.leftAnchor="325.0" AnchorPane.topAnchor="74.0" />
+   </children>
+</AnchorPane>

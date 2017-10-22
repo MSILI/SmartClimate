@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="722.0" prefWidth="1148.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.com.controllers.NumericVisionParMoisController">
+   <children>
+      <AnchorPane layoutY="-1.0" prefHeight="702.0" prefWidth="281.0" style="-fx-background-color: #0C2757;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-1.0">
+         <children>
+            <Separator layoutX="18.0" layoutY="71.0" prefHeight="3.0" prefWidth="247.0" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="71.0" />
+            <Label fx:id="anneLabel" layoutX="24.0" layoutY="30.0" prefHeight="41.0" prefWidth="236.0" text="Station" textFill="#fffdfd" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="30.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="comboStations" layoutX="41.0" layoutY="126.0" prefHeight="41.0" prefWidth="199.0" promptText="ABBEVILLE" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="126.0" />
+            <Label layoutX="41.0" layoutY="103.0" text="Station :" textFill="#fcfcfc" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="103.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="41.0" layoutY="179.0" text="Annee : " textFill="WHITE" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="179.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Button layoutX="77.0" layoutY="360.0" mnemonicParsing="false" onAction="#visualiser" prefHeight="41.0" prefWidth="128.0" text="Visualiser" AnchorPane.leftAnchor="77.0" AnchorPane.topAnchor="360.0" />
+            <Label layoutX="72.0" layoutY="513.0" prefHeight="20.0" prefWidth="143.0" text="Tempétature : " textFill="WHITE" AnchorPane.leftAnchor="72.0" AnchorPane.topAnchor="513.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="radioKelvin" layoutX="72.0" layoutY="545.0" mnemonicParsing="false" onAction="#setToKelvin" selected="true" text="Kelvin" textFill="WHITE" AnchorPane.leftAnchor="72.0" AnchorPane.topAnchor="545.0">
+               <toggleGroup>
+                  <ToggleGroup fx:id="groupeR" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="radioCelsius" layoutX="158.0" layoutY="545.0" mnemonicParsing="false" onAction="#setToCelcius" prefHeight="18.0" prefWidth="94.0" text="Celsius" textFill="WHITE" toggleGroup="$groupeR" AnchorPane.leftAnchor="158.0" AnchorPane.topAnchor="545.0" />
+            <Separator layoutX="17.0" layoutY="489.0" prefHeight="3.0" prefWidth="247.0" AnchorPane.leftAnchor="17.0" AnchorPane.topAnchor="489.0" />
+            <ProgressBar fx:id="progBarre" layoutX="36.0" layoutY="424.0" prefHeight="20.0" prefWidth="199.0" progress="0.0" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="424.0" />
+            <ProgressIndicator fx:id="progIndicator" layoutX="233.0" layoutY="427.0" prefHeight="35.0" prefWidth="38.0" progress="0.0" AnchorPane.leftAnchor="233.0" AnchorPane.topAnchor="427.0" />
+            <Label fx:id="progLabel" layoutX="40.0" layoutY="455.0" prefHeight="15.0" prefWidth="151.0" text="progressing" textFill="WHITE" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="455.0" />
+            <ComboBox fx:id="comboAnnee" layoutX="42.0" layoutY="203.0" onAction="#popilateComboboxMois" prefHeight="41.0" prefWidth="199.0" promptText="1996" AnchorPane.leftAnchor="42.0" AnchorPane.topAnchor="203.0" />
+            <Label layoutX="44.0" layoutY="254.0" text="Mois : " textFill="WHITE" AnchorPane.leftAnchor="44.0" AnchorPane.topAnchor="254.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="comboMois" layoutX="43.0" layoutY="281.0" prefHeight="41.0" prefWidth="199.0" promptText="1" AnchorPane.leftAnchor="43.0" AnchorPane.topAnchor="281.0" />
+            <Label layoutX="14.0" layoutY="596.0" text="La valeur -1 signifie que le les données &#10;n'ont pas été mesurées" textFill="WHITE" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="596.0" />
+            <Label layoutX="14.0" layoutY="578.0" text="Note : " textFill="WHITE" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="578.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="66.0" layoutY="14.0" text="Voir tableau par mois" textFill="WHITE" AnchorPane.leftAnchor="66.0" AnchorPane.topAnchor="14.0" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tableView" layoutX="320.0" layoutY="53.0" prefHeight="575.0" prefWidth="771.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="57.0" AnchorPane.topAnchor="53.0">
+         <columns>
+            <TableColumn fx:id="dateColumn" prefWidth="137.0" text="Jour" />
+            <TableColumn fx:id="tempColumn" prefWidth="210.0" text="Moyenne Températures(°K)" />
+            <TableColumn fx:id="humColumn" prefWidth="199.0" text="Moyenne Humidités(%)" />
+            <TableColumn fx:id="nubColumn" prefWidth="209.0" text="Moyenne Nébulosités(%)" />
+         </columns>
+      </TableView>
+      <Label fx:id="dateLabel" layoutX="320.0" layoutY="31.0" text="" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="31.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+   </children>
+</AnchorPane>

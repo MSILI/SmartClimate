@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="javadoc">
+    <target name="javadoc">
+        <javadoc access="private" author="true" classpath="C:\Users\M'SILI Fatah\.m2\repository\commons-io\commons-io\1.3.2\commons-io-1.3.2.jar;D:\Etudes\JAVA\Eclipse pour Java\eclipse-java-neon-2-win32-x86_64\eclipse\plugins\org.eclipse.fx.ide.css.jfx8_2.4.0.201605112122.jar" destdir="doc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" source="1.8" sourcefiles="src/app/com/controllers/MainController.java" sourcepath="src" splitindex="true" use="true" version="true"/>
+    </target>
+</project>
